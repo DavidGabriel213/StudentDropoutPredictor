@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as np
 import joblib
 import os
-processor=joblib.load("/storage/emulated/0/Download/StudentDropout/Preprocessor.joblib")
-model=joblib.load('/storage/emulated/0/Download/StudentDropout/XGB.joblib')
+processor=joblib.load("Preprocessor.joblib")
+model=joblib.load('XGB.joblib')
 print('processor and model loaded')
 app=Flask(__name__)
 @app.route('/', methods=['GET','POST'])
