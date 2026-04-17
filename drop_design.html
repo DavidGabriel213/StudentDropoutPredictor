@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for ('static', filename='dropout_styles.css')}}">
+  <title>StudentDropoutPredictor</title>
+</head>
+<body>
+  <div class="mform">
+   <form action="/" method="POST">
+   <h>Student Dropout Predictor</h>
+   <p>Enter Student Details Below</p>
+   <label>Age:</label>
+   <input name="age" type="number" placeholder="Enter Student Age" required>
+   <br>
+   <label>CGPA:</label>
+   <input type="number" name="cgpa" placeholder="Enter Student CGPA" required>
+   <br>
+   <label>Attendance Rate(%):</label>
+   <input type="number" name="attendance_rate" placeholder="Enter Attendance Rate(%)" required>
+   <br>
+   <label>Family Income:</label>
+   <input type="number" name="family_income" placeholder="Enter Family Income" required>
+   <br>
+   <label>Distance From Campus:</label>
+   <input type="number" name="distance" placeholder="Enter Distance From Campus" required>
+   <br>
+   <label>Daily Study Hours:</label>
+   <input type="number" name="study_hours" placeholder="Enter Study Hours" step="any" required>
+   <br>
+   <label>Failed Courses:</label>
+   <input type="number" name="failed_courses" placeholder="Enter Number of Total FailedCourses" required>
+   <br>
+   <label>Mental Health Score(/10):</label>
+   <input type="number" name="health_score" placeholder="Enter MentalHealthScore" step="any" required>
+   <br>
+   <label>Extracurricular Activities:</label>
+   <input type="number" name="extra_activities" placeholder="Enter number of Activities" required>
+   <br>
+   <label>Lecturer Rating(/10):</label>
+   <input type="number" name="rating" placeholder="Enter Rating" step="any" required>
+   <br>
+   <label>LibraryVisits Per Month:</label>
+   <input type="number" name="library_visits" placeholder="Enter Number of Visits" required>
+   <br>
+   <label>ExamScore Average(%):</label>
+   <input type="number" name="exams_score" placeholder="Enter Average percent" step="any" required>
+   <br>
+   
+   
+   <label>State:</label>
+   <select name="state">
+     <option value="Abuja">Abuja</option>
+     <option value="Kaduna">Kaduna</option>
+     <option value="Sokoto">Sokoto</option>
+     <option value="Delta">Delta</option>
+     <option value="Rivers">Rivers</option>
+     <option value="Kwara">Kwara</option>
+     <option value="Oyo">Oyo</option>
+     <option value="Borno">Borno</option>
+     <option value="Enugu">Enugu</option>
+     <option value="Lagos">Lagos</option>
+     <option value="Imo">Imo</option>
+     <option value="Kano">Kano</option>
+     <option value="Bauchi">Bauchi</option>
+     <option value="Anambra">Anambra</option>
+   </select>
+   <br>
+   <label>Institution:</label>
+   <select name="institution">
+     <option value="Polytechnic">Polytechnic</option>
+     <option value="College of education">College of Education</option>
+     <option value="University">University</option>
+   </select>
+   <br>
+   <label>Level:</label>
+   <select name="level">
+     <option value="100L">100L</option>
+     <option value="200L">200L</option>
+     <option value="300L">300L</option>
+     <option value="400L">400L</option>
+     <option value="500L">500L</option>
+   </select>
+   <br>
+   <label>Course:</label>
+   <select name="course">
+     <option value="Agriculture">Agriculture</option>
+     <option value="Education">Education</option>
+     <option value="Nursing">Nursing</option>
+     <option value="Arts">Arts</option>
+     <option value="Medicine">Medicine</option>
+     <option value="Computer science">Computer science</option>
+     <option value="Business">Business</option>
+     <option value="Engineering">Engineering</option>
+     <option value="Law">Law</option>
+     <option value="Sciences">Sciences</option>
+   </select>
+   <br>
+   <label>Parent Education:</label>
+   <select name="parentedu">
+     <option value="Primary">Primary</option>
+     <option value="Secondary">Secondary</option>
+     <option value="Tertiary">Tertiary</option>
+     <option value="Postgraduate">Postgraduate</option>
+   </select>
+   <br>
+   <label>Tuition Paid</label>
+   <select name="tuition_paid">
+     <option value="Fully paid">Fully Paid</option>
+     <option value="Not paid">Not Paid</option>
+     <option value="Partially paid">Partially Paid</option>
+   </select>
+   <br>
+   <label>Gender:</label>
+   <select name="gender">
+     <option value="0">Female</option>
+     <option value="1">Male</option>
+   </select>
+   <br>
+   <label>Scholarship:</label>
+   <select name="scholarship">
+     <option value="0">No</option>
+     <option value="1">Yes</option>
+   </select>
+   <br>
+   <label>Part Time Job:</label>
+   <select name="partjob">
+     <option value="0">No</option>
+     <option value="1">Yes</option>
+   </select>
+   <br>
+   <label>InternetAccess:</label>
+   <select name="internetaccess">
+     <option value="0">No</option>
+     <option value="1">Yes</option>
+   </select>
+   <br> 
+   <label>Hostel Resident:</label>
+   <select name="hostelresident">
+     <option value="0">No</option>
+     <option value="1">Yes</option>
+   </select>
+   <br>
+   <label>Prev Dropout Attempt:</label>
+   <select name="prev_drop_attempt">
+     <option value="0">No</option>
+     <option value="1">Yes</option>
+   </select>
+   <br>
+   <button type="submit">Predict Student Status</button>
+   <br>
+   <div class="{{ result_class }}">
+    {% if prediction %}{{ prediction }}{% endif %}
+  </div>
+  </form>
+</body>   
+  </div>
+</html>
