@@ -20,7 +20,7 @@ def myFunc():
         TuitionPaid=request.form['tuition_paid']
         
         Age=float(request.form['age'])
-        CGPA=float(request.form['cgpa'])
+        Cgpa=float(request.form['cgpa'])
         AttendanceRate=float(request.form['attendance_rate'])
         DistanceFromCampus=float(request.form['distance'])
         DailyStudyHours=float(request.form['study_hours'])
@@ -44,7 +44,7 @@ def myFunc():
         features=pd.DataFrame({
             'State':[State], 'Institution':[Institution],'Level':[Level],'Course':[Course], 'ParentEducation':[ParentEducation],
             'TuitionPaid':[TuitionPaid],
-            'Age':[Age], 'CGPA':[CGPA], 'AttendanceRate(%)':[AttendanceRate],
+            'Age':[Age], 'CGPA':[Cgpa], 'AttendanceRate(%)':[AttendanceRate],
             'DistanceFromCampus(km)':[DistanceFromCampus],'DailyStudyHours':[DailyStudyHours],
             'FailedCourses':[FailedCourses], 'MentalHealthScore':[MentalHealthScore],
             'ExtracurricularActivities':[ExtracurricularActivities], 'LecturerRating':[LecturerRating],
